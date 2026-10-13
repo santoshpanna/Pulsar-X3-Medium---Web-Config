@@ -1,0 +1,44 @@
+/* Full-page states: connect, boot log, asleep, no WebHID. */
+.scr {
+  position: relative;
+  min-height: calc(100vh - 140px);
+  padding: 48px var(--gutter) 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  overflow: hidden;
+}
+.scr.center { justify-content: center; align-items: center; }
+.scan { position: absolute; left: 0; right: 0; height: 3px; background: var(--acc); opacity: 0.6; animation: scan 4.5s linear infinite; pointer-events: none; }
+.logo { height: clamp(96px, 15vw, 210px); max-width: 100%; }
+.logo .ln { animation: rowin 0.45s steps(5) both; animation-delay: calc(var(--r) * 90ms); }
+.logo.dim { opacity: 0.35; }
+.tagline { font-family: var(--disp); font-size: clamp(18px, 2.4vw, 30px); font-weight: 800; font-stretch: 112%; line-height: 1.15; max-width: 28ch; margin: 0; }
+
+.cgrid { display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start; }
+.check { flex: 1 1 380px; max-width: 620px; border: 3px solid var(--ink); }
+.check-h { background: var(--ink); color: var(--paper); padding: 8px 14px; font-weight: 700; display: flex; gap: 10px; }
+.check ol { list-style: none; margin: 0; padding: 6px 0; }
+.check li { display: flex; gap: 14px; padding: 10px 14px; border-bottom: 2px dotted var(--ink); }
+.check li:last-child { border-bottom: 0; }
+.check li b { color: var(--mute); }
+.check li small { display: block; color: var(--mute); font-size: 12.5px; }
+.cta { flex: 1 1 320px; display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }
+.cta .bb.big { animation: throb 1.6s steps(2) infinite; }
+.cta .bb.big:hover { animation: none; }
+
+.err-box { max-width: 780px; border: 3px solid var(--ink); box-shadow: var(--shadow) var(--shadow) 0 var(--acc); animation: pop 0.3s steps(3); }
+.err-box pre { margin: 0; padding: 12px 14px; white-space: pre-wrap; font-family: var(--mono); font-size: 12.5px; }
+
+.term-box { width: 100%; max-width: 780px; border: 3px solid var(--ink); box-shadow: 10px 10px 0 var(--acc); }
+.term-box .check-h { justify-content: space-between; }
+.boot { padding: 18px 20px; display: flex; flex-direction: column; gap: 6px; min-height: 300px; font-size: 15px; }
+.bl { display: flex; gap: 10px; align-items: baseline; animation: wipe 0.3s steps(8) both; }
+.bl .ld { transform: translateY(-4px); }
+.bl .ok { font-weight: 700; }
+.bl .ok.acc { background: var(--acc); color: var(--on-acc); padding: 0 6px; }
+.bl .ok.err { background: var(--ink); color: var(--paper); padding: 0 6px; }
+
+.zz { position: absolute; left: 36%; top: 220px; font-family: var(--disp); font-weight: 800; font-size: 44px; color: var(--acc); opacity: 0; animation: zfloat 3s linear infinite; }
+.zz.z2 { left: 40%; top: 212px; font-size: 30px; animation-delay: 1s; }
+.zz.z3 { left: 43%; top: 216px; font-size: 22px; animation-delay: 2s; }

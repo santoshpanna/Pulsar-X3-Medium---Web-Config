@@ -1,0 +1,36 @@
+/* Character-cell bar: shaded run, solid run clipped to a width, optional range input on top. */
+.abar {
+  position: relative;
+  flex: 1;
+  min-width: 120px;
+  height: 1.5em;
+  line-height: 1.5em;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: var(--ascii);
+  letter-spacing: 0;
+}
+.abar-bg, .abar-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.abar-bg { right: 0; color: var(--mute); opacity: 0.55; }
+.abar-fill { transition: width 0.14s steps(4); }
+.abar-in { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; }
+.abar:has(.abar-in:focus-visible) { outline: 3px solid var(--acc); outline-offset: 3px; }
+.abar.hot .abar-fill { color: var(--acc); }
+
+.ticks { display: flex; justify-content: space-between; font-size: 11px; color: var(--mute); margin-top: 4px; }
+
+/* Block lettering drawn as SVG (see figlet-svg.ts): solid cells in ink, shadow strokes in the accent. */
+.figsvg { display: block; height: 100%; width: auto; max-width: 100%; overflow: visible; }
+.figsvg .fb { fill: currentColor; shape-rendering: crispEdges; }
+.figsvg .fs { fill: none; stroke: var(--acc); stroke-width: 1.6; stroke-linecap: square; stroke-linejoin: miter; }
+
+/* Dotted leader between a label and its value. */
+.ld { flex: 1; min-width: 12px; border-bottom: 2px dotted currentColor; opacity: 0.4; transform: translateY(-3px); }

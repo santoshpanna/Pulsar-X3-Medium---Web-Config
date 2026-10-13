@@ -1,0 +1,230 @@
+{
+ "summary": {
+  "transactions": 86,
+  "checksum_bad": 0,
+  "sub_mismatch": 5,
+  "rt_ms_min": 0.0,
+  "rt_ms_med": 31.0,
+  "rt_ms_max": 47.0,
+  "passed": 29,
+  "failed": 0
+ },
+ "results": [
+  {
+   "name": "paired mouse 01 04 04",
+   "ok": true,
+   "detail": "3710:3409",
+   "raw": "01 01 84 04 00 00 10 37 09 34 00 00"
+  },
+  {
+   "name": "firmware 01 07 04",
+   "ok": true,
+   "detail": "1.0.16",
+   "raw": "01 01 87 04 00 00 16 10 00 00 00 00"
+  },
+  {
+   "name": "battery 08 01 01",
+   "ok": true,
+   "detail": "51 %",
+   "raw": "01 08 81 01 00 00 33 00 00 00"
+  },
+  {
+   "name": "charging 08 03 01",
+   "ok": true,
+   "detail": "0",
+   "raw": "01 08 83 01 00 00 00 00 00 00"
+  },
+  {
+   "name": "sleep timer 08 05 03",
+   "ok": true,
+   "detail": "30 -> 60 (wanted 60) -> restored 30",
+   "raw": "01 08 85 03 00 00 00 1e 00 00 00 00"
+  },
+  {
+   "name": "low power 08 08 02",
+   "ok": true,
+   "detail": "10 % -> 15 % (wanted 15 %) -> restored 10 %",
+   "raw": "01 08 88 02 00 00 00 0a 00 00 00 00"
+  },
+  {
+   "name": "polling 01 09 02",
+   "ok": true,
+   "detail": "0x8 -> 0x4 (wanted 0x4) -> restored 0x8",
+   "raw": "01 01 89 02 00 00 00 08 00 00 00 00"
+  },
+  {
+   "name": "debounce 04 03 03",
+   "ok": true,
+   "detail": "2 ms -> 3 ms (wanted 3 ms) -> restored 2 ms",
+   "raw": "01 04 83 03 00 00 00 02 00 00 00 00"
+  },
+  {
+   "name": "lod 07 02 03 (profile 1)",
+   "ok": true,
+   "detail": "1.0 mm -> 2.0 mm (wanted 2.0 mm) -> restored 1.0 mm",
+   "raw": "01 07 82 03 00 00 01 02 0a 00 00 00"
+  },
+  {
+   "name": "lod profile 0 read mirrors profile 1",
+   "ok": true,
+   "detail": "p0=10 p1=10"
+  },
+  {
+   "name": "ripple 07 03 02",
+   "ok": true,
+   "detail": "off -> on (wanted on) -> restored off",
+   "raw": "01 07 83 02 00 00 00 00 0a 00 00 00"
+  },
+  {
+   "name": "angle snap 07 04 02",
+   "ok": true,
+   "detail": "off -> on (wanted on) -> restored off",
+   "raw": "01 07 84 02 00 00 00 00 00 00 00 00"
+  },
+  {
+   "name": "motion sync 07 05 02",
+   "ok": true,
+   "detail": "on -> off (wanted off) -> restored on",
+   "raw": "01 07 85 02 00 00 00 01 00 00 00 00"
+  },
+  {
+   "name": "dpi stages 05 04 15 read",
+   "ok": true,
+   "detail": "active 2, 2 stages [(400, 400), (800, 800)], answered sub 0x0d",
+   "raw": "01 05 84 0d 00 00 01 02 02 01 90 01 90 01 02 20 03 20 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"
+  },
+  {
+   "name": "active stage 05 01 02 read",
+   "ok": true,
+   "detail": "2 (table says 2)",
+   "raw": "01 05 81 02 00 00 01 02 00 00"
+  },
+  {
+   "name": "current dpi 05 02 05 read",
+   "ok": true,
+   "detail": "800x800 (stage 2 = (800, 800))",
+   "raw": "01 05 82 05 00 00 00 20 03 20 03 00"
+  },
+  {
+   "name": "dpi stages 05 04 21 idempotent write",
+   "ok": true,
+   "detail": "table unchanged"
+  },
+  {
+   "name": "dpi stages 05 04 21 write",
+   "ok": true,
+   "detail": "[(400, 400), (800, 800)] -> [(400, 400), (810, 810)]; current dpi (810, 810)"
+  },
+  {
+   "name": "dpi stages restored",
+   "ok": true,
+   "detail": "01 05 84 0d 00 00 01 02 02 01 90 01 90 01 02 20 03 20 03"
+  },
+  {
+   "name": "active stage 05 01 02 write",
+   "ok": true,
+   "detail": "2 -> 1 (current (400, 400), table byte7 1) -> restored 2"
+  },
+  {
+   "name": "button 0x01 read",
+   "ok": true,
+   "detail": "type/a1/a2 = 01 01 00",
+   "raw": "01 04 81 06 00 00 01 01 01 01 00 00"
+  },
+  {
+   "name": "button 0x02 read",
+   "ok": true,
+   "detail": "type/a1/a2 = 01 02 00",
+   "raw": "01 04 81 06 00 00 01 02 01 02 00 00"
+  },
+  {
+   "name": "button 0x03 read",
+   "ok": true,
+   "detail": "type/a1/a2 = 01 03 00",
+   "raw": "01 04 81 06 00 00 01 03 01 03 00 00"
+  },
+  {
+   "name": "button 0x04 read",
+   "ok": true,
+   "detail": "type/a1/a2 = 01 04 00",
+   "raw": "01 04 81 06 00 00 01 04 01 04 00 00"
+  },
+  {
+   "name": "button 0x05 read",
+   "ok": true,
+   "detail": "type/a1/a2 = 01 05 00",
+   "raw": "01 04 81 06 00 00 01 05 01 05 00 00"
+  },
+  {
+   "name": "button 0x0b read",
+   "ok": true,
+   "detail": "type/a1/a2 = 09 03 00",
+   "raw": "01 04 81 06 00 00 01 0b 09 03 00 00"
+  },
+  {
+   "name": "button 0x0b idempotent write",
+   "ok": true,
+   "detail": "01 04 81 06 00 00 01 0b 09 03 00 00"
+  },
+  {
+   "name": "button 0x0b write 04 01 06",
+   "ok": true,
+   "detail": "(9, 3, 0) -> (9, 1, 0) -> restored (9, 3, 0)"
+  },
+  {
+   "name": "button 0x05 keyboard write",
+   "ok": true,
+   "detail": "(1, 5, 0) -> (2, 1, 6) -> restored (1, 5, 0)"
+  },
+  {
+   "name": "stage colour 05 05 05 [1]",
+   "ok": true,
+   "detail": "01 05 85 05 00 00 01 01 0a 0a dc 00 00 00",
+   "raw": "01 05 85 05 00 00 01 01 0a 0a dc 00 00 00",
+   "info": true
+  },
+  {
+   "name": "unknown 01 01 01",
+   "ok": true,
+   "detail": "01 01 81 01 00 00 ff 00 00 00 00 00 00 00",
+   "raw": "01 01 81 01 00 00 ff 00 00 00 00 00 00 00",
+   "info": true
+  },
+  {
+   "name": "unknown 01 05 02",
+   "ok": true,
+   "detail": "01 01 85 02 00 00 02 00 00 00 00 00 00 00",
+   "raw": "01 01 85 02 00 00 02 00 00 00 00 00 00 00",
+   "info": true
+  },
+  {
+   "name": "unknown 01 06 02",
+   "ok": true,
+   "detail": "01 01 86 02 00 00 01 01 00 00 00 00 00 00",
+   "raw": "01 01 86 02 00 00 01 01 00 00 00 00 00 00",
+   "info": true
+  },
+  {
+   "name": "unknown 01 08 04",
+   "ok": true,
+   "detail": "01 01 88 04 00 00 00 10 00 00 00 00 00 00",
+   "raw": "01 01 88 04 00 00 00 10 00 00 00 00 00 00",
+   "info": true
+  },
+  {
+   "name": "unknown 08 02 01",
+   "ok": true,
+   "detail": "01 08 82 01 00 00 00 00 00 00 00 00 00 00",
+   "raw": "01 08 82 01 00 00 00 00 00 00 00 00 00 00",
+   "info": true
+  },
+  {
+   "name": "unknown 08 04 02",
+   "ok": true,
+   "detail": "01 08 84 02 00 00 00 01 00 00 00 00 00 00",
+   "raw": "01 08 84 02 00 00 00 01 00 00 00 00 00 00",
+   "info": true
+  }
+ ],
+ "when": "2026-10-13 20:15:11"
+}

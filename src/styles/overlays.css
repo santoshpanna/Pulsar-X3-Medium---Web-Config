@@ -1,0 +1,61 @@
+/* ── staged-changes dock ────────────────────────────────────────── */
+.dock {
+  position: sticky;
+  bottom: 0;
+  z-index: 20;
+  border-top: 3px solid var(--ink);
+  background: var(--paper);
+  animation: dockin 0.4s cubic-bezier(0.2, 1.4, 0.4, 1) both;
+}
+.dock-h { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; padding: 14px var(--gutter); }
+.dock-h .ttl { display: flex; align-items: center; gap: 12px; flex: 1; min-width: 260px; font-weight: 700; }
+.dock-h .small { font-weight: 500; }
+.cnt { font-family: var(--disp); font-size: 28px; font-weight: 800; background: var(--acc); color: var(--on-acc); padding: 0 12px; line-height: 1.3; animation: pop 0.3s steps(3); }
+.big-tag { font-size: 16px; padding: 4px 10px; }
+.dock-act { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.diff { border-top: 2px dashed var(--ink); padding: 10px var(--gutter) 16px; max-height: 240px; overflow: auto; display: flex; flex-direction: column; gap: 2px; }
+.dl { display: grid; grid-template-columns: 24px minmax(160px, 220px) minmax(0, 1fr); gap: 12px; align-items: baseline; padding: 3px 0; animation: wipe 0.35s steps(6) both; }
+.dl .sg { font-weight: 700; color: var(--mute); }
+.dl .lb { font-weight: 700; }
+.dl .vv { display: flex; flex-wrap: wrap; gap: 10px; align-items: baseline; min-width: 0; }
+.dl s { color: var(--mute); }
+.dl .to { background: var(--acc); color: var(--on-acc); padding: 0 6px; font-weight: 700; }
+.prog { display: flex; align-items: center; gap: 16px; padding: 16px var(--gutter); flex-wrap: wrap; }
+.prog .abar { font-size: 18px; max-width: 640px; }
+.prog .abar-fill { color: var(--acc); }
+
+/* ── toast ──────────────────────────────────────────────────────── */
+.toast {
+  position: fixed;
+  top: 20px;
+  /* Align with the content column's right edge on wide screens. */
+  right: max(20px, calc((100vw - var(--maxw)) / 2 - 12px));
+  z-index: 40;
+  max-width: min(440px, calc(100vw - 32px));
+  border: 3px solid var(--ink);
+  background: var(--paper);
+  box-shadow: 8px 8px 0 var(--ink);
+  animation: toastin 0.35s steps(5) both;
+}
+.toast-h { display: flex; justify-content: space-between; gap: 12px; padding: 6px 12px; font-weight: 700; font-size: 12px; }
+.toast.ok .toast-h { background: var(--acc); color: var(--on-acc); }
+.toast.err .toast-h { background: var(--ink); color: var(--paper); }
+.toast.info .toast-h { border-bottom: 2px solid var(--ink); }
+.toast-b { padding: 10px 12px 12px; font-weight: 600; overflow-wrap: anywhere; }
+.toast-t { height: 4px; background: var(--ink); animation: drain linear both; }
+
+@media (max-width: 720px) {
+  .dl { grid-template-columns: 20px minmax(0, 1fr); }
+  .dl .vv { grid-column: 2; }
+}
+
+/* On a phone the dock must not eat the screen: one line of title, full-width buttons, a short diff. */
+@media (max-width: 720px) {
+  .dock-h { gap: 10px; padding-top: 10px; padding-bottom: 10px; }
+  .dock-h .ttl { min-width: 0; }
+  .dock-h .ttl .small, .dock-h .ttl br, .dock .kbd { display: none; }
+  .cnt { font-size: 22px; }
+  .dock-act { width: 100%; gap: 8px; }
+  .dock-act .bb { flex: 1; padding: 0 8px; }
+  .diff { max-height: 92px; padding-top: 6px; padding-bottom: 8px; }
+}

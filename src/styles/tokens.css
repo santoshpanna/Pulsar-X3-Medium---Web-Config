@@ -1,0 +1,48 @@
+/* Design tokens. One ground, one ink, one accent; dark mode swaps ground and ink. */
+:root {
+  --paper: #e9e7e0;
+  --ink: #0e0e0d;
+  --mute: #56544d;
+  --acc: #ff4f00;
+  --on-acc: #0e0e0d;
+  --term-bg: #0e0e0d;
+  --term-fg: #e9e7e0;
+  --term-mute: #8f8c84;
+  --term-hover: #2a2a28;
+
+  --mono: 'IBM Plex Mono', 'Cascadia Mono', Consolas, Menlo, monospace;
+  --disp: 'Martian Mono Variable', 'IBM Plex Mono', monospace;
+  /* Glyph art (box drawing, blocks) must come from ONE font so cells line up. */
+  --ascii: ui-monospace, 'Cascadia Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace;
+
+  /* Content column: rules and bars run edge to edge, content stays within --maxw, centred.
+     The % resolves where --gutter is used (padding of a full-width block), not here. */
+  --maxw: 1376px;
+  --gutter: max(32px, calc((100% - var(--maxw)) / 2));
+  --shadow: 8px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --paper: #0e0e0d;
+    --ink: #e9e7e0;
+    --mute: #a3a097;
+    --term-bg: #050505;
+    --term-hover: #1c1c1a;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --paper: #0e0e0d;
+  --ink: #e9e7e0;
+  --mute: #a3a097;
+  --term-bg: #050505;
+  --term-hover: #1c1c1a;
+  color-scheme: dark;
+}
+
+@media (max-width: 720px) {
+  :root { --gutter: 16px; --shadow: 5px; }
+}

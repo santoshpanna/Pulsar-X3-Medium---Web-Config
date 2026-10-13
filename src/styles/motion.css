@@ -1,0 +1,29 @@
+/* Motion is stepped on purpose: things snap between frames like a terminal redraw. */
+@keyframes blink { 50% { opacity: 0; } }
+@keyframes rise { from { opacity: 0; transform: translateY(24px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: none; clip-path: inset(0); } }
+@keyframes wipe { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0); } }
+@keyframes pop { 0% { transform: scale(0.6); } 60% { transform: scale(1.15); } 100% { transform: scale(1); } }
+@keyframes nudge { 50% { transform: translateX(-4px); } }
+@keyframes march { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes glitch {
+  0% { transform: translate(0, 0); filter: drop-shadow(4px 0 0 var(--acc)); }
+  33% { transform: translate(-3px, 1px); filter: drop-shadow(-4px 0 0 var(--acc)); }
+  66% { transform: translate(2px, -1px); filter: drop-shadow(2px 2px 0 var(--acc)); }
+}
+@keyframes rowin { from { opacity: 0; transform: translateX(-24px); } to { opacity: 1; transform: none; } }
+@keyframes ping { 50% { box-shadow: 0 0 0 3px var(--paper), 0 0 0 9px var(--acc); } }
+@keyframes hover-y { 50% { transform: translateY(-3px); } }
+@keyframes capglow { 50% { border-color: var(--paper); } }
+@keyframes flash { 0% { background: var(--acc); color: var(--on-acc); } 100% { background: transparent; } }
+@keyframes dockin { from { transform: translateY(100%); } to { transform: none; } }
+@keyframes spin { 0% { content: '|'; } 25% { content: '/'; } 50% { content: '-'; } 75% { content: '\\'; } }
+@keyframes toastin { from { transform: translateX(calc(100% + 40px)); } to { transform: none; } }
+@keyframes drain { from { width: 100%; } to { width: 0; } }
+@keyframes scan { from { top: -4px; } to { top: 100%; } }
+@keyframes throb { 50% { box-shadow: 8px 8px 0 var(--acc); transform: translate(-2px, -2px); } }
+@keyframes zfloat { 0% { opacity: 0; transform: translate(0, 0) scale(0.6); } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(60px, -160px) scale(1.4); } }
+@keyframes charge { 50% { opacity: 0.55; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
