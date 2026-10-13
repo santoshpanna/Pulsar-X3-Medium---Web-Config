@@ -5,13 +5,13 @@
   "type": "module",
   "description": "Browser-based (WebHID) configurator for the Pulsar X3 gaming mouse. No desktop app required.",
   "license": "MIT",
-  "homepage": "https://santoshpanna.github.io/Pulsar-X3-Medium---Web-Config/",
+  "homepage": "https://santoshpanna.github.io/Pulsar-X3-Web-Config/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/santoshpanna/Pulsar-X3-Medium---Web-Config.git"
+    "url": "git+https://github.com/santoshpanna/Pulsar-X3-Web-Config.git"
   },
   "bugs": {
-    "url": "https://github.com/santoshpanna/Pulsar-X3-Medium---Web-Config/issues"
+    "url": "https://github.com/santoshpanna/Pulsar-X3-Web-Config/issues"
   },
   "scripts": {
     "dev": "vite",
