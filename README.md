@@ -6,11 +6,11 @@
 </p>
 
 <p align="center">
-  <b><a href="https://santoshpanna.github.io/Pulsar-X3-Medium---Web-Config/">Open the web config</a></b>
+  <b><a href="https://santoshpanna.github.io/Pulsar-X3-Web-Config/">Open the web config</a></b>
   ·
-  <a href="https://santoshpanna.github.io/Pulsar-X3-Medium---Web-Config/?demo">Try the demo (no mouse needed)</a>
+  <a href="https://santoshpanna.github.io/Pulsar-X3-Web-Config/?demo">Try the demo (no mouse needed)</a>
   ·
-  <a href="https://github.com/santoshpanna/Pulsar-X3-Medium---Web-Config/issues">Report an issue</a>
+  <a href="https://github.com/santoshpanna/Pulsar-X3-Web-Config/issues">Report an issue</a>
 </p>
 
 > [!IMPORTANT]
